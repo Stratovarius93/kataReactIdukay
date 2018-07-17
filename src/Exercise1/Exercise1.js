@@ -7,17 +7,27 @@ export class Exercise1 extends Component {
   }
   calculo = (n) => {
     //console.log('matriz:: ', matriz);
-    var matriz_3_3 =[
-      ['I','O',1],
+    var m =[
+      ['I',0, 1],
       [1, 0, 1 ],
       [1, 0, 'S']
     ];
-    var n=[['x','x',1, 1, 'x',1, 1, 'x','x']];
-    //var n=[[1,'x',1]];
-    for (var i = 0; i < n.length; i++) {
-      return (n);
+    for (var i = 0; i < m.length; i++) {
+      for (var j = 0; j < m.length; j++) {
+        if (m[i][j]=='I' || m[i][j]=='S') {
+          m[i][j]='x';
+        }
+        if (m[i][j]==0) {
+          m[i][j]='x';
+        }
+      }
     }
-    //return (n);
+    var n =[];
+    for (var i = 0; i < m.length; i++) {
+      n = n.concat(m[i]);
+    }
+    //var n=[['x','x',1, 1, 'x',1, 1, 'x','x']];
+    return [n];
   }
   render() {
     return (
